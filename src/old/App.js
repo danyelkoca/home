@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import profile from "./profile.jpeg";
+// import profile from "./profile.jpeg";
 
 let hovers = Array.from(Array(144).keys()).map(function (a) {
   return { a: false };

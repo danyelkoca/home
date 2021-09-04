@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,9 +18,77 @@ code {
     font-family: "Roboto";
 }
 
-/* .profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 150px;
+.section-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.section-title::after {
+    content: "";
     position: absolute;
-} */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(50% - 0.5px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.work {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
+.work>div {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.work>div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.work p {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: black;
+    font-size: 24px;
+    z-index: 2;
+    background: white;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    width: 80%;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.work img {
+    width: 100%;
+    height: 300px;
+    object-position: center;
+    object-fit: cover;
+    transition: 1s;
+    display: block;
+
+}
+
+.work:hover img {
+    transform: scale(1.5);
+}

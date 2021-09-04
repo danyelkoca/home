@@ -1,5 +1,3 @@
-import profile from "../../profile.jpeg";
-
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,46 +6,110 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "@material-ui/core";
+import TranslateIcon from "@material-ui/icons/Translate";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  appbar: {
+    boxShadow: "none",
+    borderBottom: `1px solid rgba(0,0,0,0.1)`,
+  },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    color: "black",
   },
 }));
 
 const Navbar = () => {
   const classes = useStyles();
 
+  const [translateEl, setTranslateEl] = React.useState(null);
+
+  const handleTranslateClick = (event) => {
+    setTranslateEl(event.currentTarget);
+  };
+
+  const handleTranslateClose = () => {
+    setTranslateEl(null);
+  };
+
+  const [mainEl, setMainEl] = React.useState(null);
+
+  const handleMainClick = (event) => {
+    setMainEl(event.currentTarget);
+  };
+
+  const handleMainClose = () => {
+    setMainEl(null);
+  };
+
   return (
-    <div className="navbar">
-      {/* <img src={profile} alt="profile" className="profile" /> */}
-      <div className={classes.root}>
-        <AppBar position="sticky" color={"transparent"}>
-          <Toolbar variant="dense">
-            <Typography variant="h6" className={classes.title}>
-              Danyel Koca
-            </Typography>
-            <Button color="inherit">Login</Button>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-      </div>
-      <div></div>
-      <div></div>
-    </div>
+    <AppBar position="sticky" color="white" className={classes.appbar}>
+      <Toolbar className={classes.toolbar}>
+        <Link
+          variant="h6"
+          className={classes.title}
+          href="#"
+          style={{ textDecoration: "none" }}
+        >
+          Danyel Koca
+        </Link>
+        <div>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="translate"
+            aria-haspopup="true"
+            onClick={handleTranslateClick}
+            aria-controls="translate-menu"
+          >
+            <TranslateIcon />
+          </IconButton>
+          <Menu
+            id="translate-menu"
+            anchorEl={translateEl}
+            keepMounted
+            open={Boolean(translateEl)}
+            onClose={handleTranslateClose}
+          >
+            <MenuItem onClick={handleTranslateClose}>English</MenuItem>
+            <MenuItem onClick={handleTranslateClose}>Japanese</MenuItem>
+          </Menu>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="main menu"
+            aria-haspopup="true"
+            onClick={handleMainClick}
+            aria-controls="main-menu"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="main-menu"
+            anchorEl={mainEl}
+            keepMounted
+            open={Boolean(mainEl)}
+            onClose={handleMainClose}
+          >
+            <MenuItem onClick={handleMainClose}>My Works</MenuItem>
+            <MenuItem onClick={handleMainClose}>Blog</MenuItem>
+            <MenuItem onClick={handleMainClose}>About</MenuItem>
+            <MenuItem onClick={handleMainClose}>Contact</MenuItem>
+          </Menu>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 };
 

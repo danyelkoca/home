@@ -3,6 +3,11 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/main";
 import "@fontsource/roboto";
+import Info from "./components/display/info";
+import Works from "./components/display/works";
+import Blog from "./components/display/blog";
+import About from "./components/display/about";
+import Contact from "./components/display/contact";
 
 const theme = createTheme({
   palette: {
@@ -15,8 +20,15 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <Navbar />
+      <div style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
+        <div style={{ maxWidth: 1000, flexGrow: 1 }}>
+          <Navbar />
+          <Info />
+          <Works />
+          <Blog />
+          <About />
+          <Contact />
+        </div>
       </div>
     </ThemeProvider>
   );
