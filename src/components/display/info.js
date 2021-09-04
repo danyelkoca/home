@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     borderRadius: 1000,
     maxWidth: "200px",
-    filter: "brightness(110%) saturate(120%)",
+    filter: "brightness(110%) saturate(110%)",
     boxShadow: "0px 0px 3px 1px rgba(0, 0, 0, 0.2)",
   },
 }));
