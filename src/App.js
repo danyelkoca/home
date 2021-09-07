@@ -25,9 +25,6 @@ function App() {
           display: "flex",
           justifyContent: "center",
           flexGrow: 1,
-          overflowX: "hidden",
-          maxWidth: "100vw",
-          width: "100vw",
         }}
       >
         <div style={{ maxWidth: 1000, flexGrow: 1 }}>
