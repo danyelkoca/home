@@ -2,8 +2,6 @@ import { Grid, Typography } from "@material-ui/core";
 import profile from "../../images/profile.JPG";
 import { makeStyles } from "@material-ui/core/styles";
 
-/* offset-x | offset-y | blur-radius | spread-radius | color */
-
 const useStyles = makeStyles((theme) => ({
   profile: {
     width: "100%",
@@ -11,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 1000,
     maxWidth: "200px",
     filter: "brightness(110%) saturate(110%)",
-    boxShadow: "0px 0px 3px 1px rgba(0, 0, 0, 0.2)",
   },
 }));
 

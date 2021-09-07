@@ -20,7 +20,16 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexGrow: 1,
+          overflowX: "hidden",
+          maxWidth: "100vw",
+          width: "100vw",
+        }}
+      >
         <div style={{ maxWidth: 1000, flexGrow: 1 }}>
           <Navbar />
           <Info />
