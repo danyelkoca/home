@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
-import profile from "../../images/profile.JPG";
+import profile from "../../images/profile.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
