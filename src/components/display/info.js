@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Info = () => {
+const Info = ({ language }) => {
   const classes = useStyles();
 
   return (
@@ -47,8 +47,9 @@ const Info = () => {
           variant="h4"
           style={{ fontFamily: "'Roboto Slab', serif", fontWeight: "300" }}
         >
-          Hi! I'm Danyel, consultant / web developer / data scientist based in
-          Tokyo.
+          {language === "en"
+            ? "Hi! I'm Danyel, consultant / web developer / data scientist based in Tokyo."
+            : "こんにちは！\n 京大出身・東京在住のコンサルタントです"}
         </Typography>
       </Grid>
     </Grid>

@@ -18,6 +18,11 @@ const theme = createTheme({
 });
 
 function App() {
+  const [language, setLanguage] = useState("en");
+
+  function handleLanguageChange(lang) {
+    setLanguage(lang);
+  }
   return (
     <ThemeProvider theme={theme}>
       <div
@@ -28,12 +33,12 @@ function App() {
         }}
       >
         <div style={{ maxWidth: 1000, flexGrow: 1 }}>
-          <Navbar />
-          <Info />
-          <Works />
-          <Blog />
-          <About />
-          <Contact />
+          <Navbar language={language} onLanguageChange={handleLanguageChange} />
+          <Info language={language} />
+          <Works language={language} />
+          <Blog language={language} />
+          <About language={language} />
+          <Contact language={language} />
         </div>
       </div>
     </ThemeProvider>

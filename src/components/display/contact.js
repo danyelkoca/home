@@ -5,10 +5,13 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import IconButton from "@material-ui/core/IconButton";
 
-const Contact = () => {
+const Contact = ({ language }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <SectionTitle title="Contact" />
+    <div style={{ display: "flex", flexDirection: "column" }} id="contact">
+      <SectionTitle
+        language={language}
+        title={{ en: "Contact", jp: "コンタクト" }}
+      />
       <div style={{ marginTop: 20, marginBottom: 20, textAlign: "center" }}>
         <Link
           href="https://www.linkedin.com/in/danyelkoca"

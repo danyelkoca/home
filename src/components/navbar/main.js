@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = ({ onLanguageChange, language }) => {
   const classes = useStyles();
 
   const [translateEl, setTranslateEl] = React.useState(null);
@@ -60,7 +60,7 @@ const Navbar = () => {
           href="#"
           style={{ textDecoration: "none" }}
         >
-          Danyel Koca
+          {language === "en" ? "Danyel Koca" : "コジャ・ダニエル"}
         </Link>
         <div>
           <IconButton
@@ -81,8 +81,22 @@ const Navbar = () => {
             open={Boolean(translateEl)}
             onClose={handleTranslateClose}
           >
-            <MenuItem onClick={handleTranslateClose}>English</MenuItem>
-            <MenuItem onClick={handleTranslateClose}>Japanese</MenuItem>
+            <MenuItem
+              onClick={function () {
+                handleTranslateClose();
+                onLanguageChange("en");
+              }}
+            >
+              {language === "en" ? "English" : "英語"}
+            </MenuItem>
+            <MenuItem
+              onClick={function () {
+                handleTranslateClose();
+                onLanguageChange("jp");
+              }}
+            >
+              {language === "en" ? "Japanese" : "日本語"}
+            </MenuItem>
           </Menu>
           <IconButton
             edge="start"
@@ -102,10 +116,18 @@ const Navbar = () => {
             open={Boolean(mainEl)}
             onClose={handleMainClose}
           >
-            <MenuItem onClick={handleMainClose}>My Works</MenuItem>
-            <MenuItem onClick={handleMainClose}>Blog</MenuItem>
-            <MenuItem onClick={handleMainClose}>About</MenuItem>
-            <MenuItem onClick={handleMainClose}>Contact</MenuItem>
+            <MenuItem component="a" href="#my-works" onClick={handleMainClose}>
+              {language === "en" ? "My Works" : "プロジェクトの事例"}
+            </MenuItem>
+            <MenuItem component="a" href="#blog" onClick={handleMainClose}>
+              {language === "en" ? "Blog" : "ブログ"}
+            </MenuItem>
+            <MenuItem component="a" href="#about" onClick={handleMainClose}>
+              {language === "en" ? "About" : "学・経歴"}
+            </MenuItem>
+            <MenuItem component="a" href="#contact" onClick={handleMainClose}>
+              {language === "en" ? "Contact" : "コンタクト"}
+            </MenuItem>
           </Menu>
         </div>
       </Toolbar>

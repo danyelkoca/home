@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 
-const SectionTitle = ({ title }) => {
+const SectionTitle = ({ title, language }) => {
   return (
     <div className="section-title">
       <Typography
@@ -14,7 +14,7 @@ const SectionTitle = ({ title }) => {
           zIndex: 2,
         }}
       >
-        {title}
+        {title[language]}
       </Typography>
     </div>
   );

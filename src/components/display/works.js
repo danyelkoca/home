@@ -16,29 +16,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Works = () => {
+const Works = ({ language }) => {
   const classes = useStyles();
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <SectionTitle title="My Works" />
+    <div style={{ display: "flex", flexDirection: "column" }} id="my-works">
+      <SectionTitle
+        language={language}
+        title={{ en: "My Works", jp: "プロジェクトの事例" }}
+      />
       <Grid container spacing={3} style={{ marginTop: 20, marginBottom: 20 }}>
         <Grid item xs="12" sm="4" className="work" component="a" href="#">
           <div>
             <img src={health} alt="Healthcare" />
-            <Typography>Healthcare</Typography>
+            <Typography>{language === "en" ? "Healthcare" : "医療"}</Typography>
           </div>
         </Grid>
         <Grid item xs="12" sm="4" className="work" component="a" href="#">
           <div>
             <img src={data} alt="Data Science" />
-            <Typography>Data Science</Typography>
+            <Typography>
+              {language === "en" ? "Data Science" : "データサイエンス"}
+            </Typography>
           </div>
         </Grid>
         <Grid item xs="12" sm="4" className="work" component="a" href="#">
           <div>
             <img src={web} alt="Web Development" />
-            <Typography>Web Development</Typography>
+            <Typography>
+              {language === "en" ? "Web Development" : "Web開発"}
+            </Typography>
           </div>
         </Grid>
       </Grid>
