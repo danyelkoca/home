@@ -82,6 +82,7 @@ const Navbar = ({ onLanguageChange, language }) => {
             onClose={handleTranslateClose}
           >
             <MenuItem
+              disabled={language === "en" ? true : false}
               onClick={function () {
                 handleTranslateClose();
                 onLanguageChange("en");
@@ -90,6 +91,7 @@ const Navbar = ({ onLanguageChange, language }) => {
               {language === "en" ? "English" : "英語"}
             </MenuItem>
             <MenuItem
+              disabled={language === "jp" ? true : false}
               onClick={function () {
                 handleTranslateClose();
                 onLanguageChange("jp");
