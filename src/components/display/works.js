@@ -3,6 +3,7 @@ import { Grid, Typography } from "@material-ui/core";
 import health from "../../images/health.jpg";
 import data from "../../images/data.jpg";
 import web from "../../images/web.jpg";
+import SectionTitle from "./sectionTitle";
 
 const useStyles = makeStyles((theme) => ({
   profile: {
@@ -20,21 +21,7 @@ const Works = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div className="section-title">
-        <Typography
-          variant="h5"
-          component="span"
-          style={{
-            fontFamily: "'Roboto Slab', serif",
-            fontWeight: "300",
-            padding: "0px 40px",
-            backgroundColor: "white",
-            zIndex: 2,
-          }}
-        >
-          My Works
-        </Typography>
-      </div>
+      <SectionTitle title="My Works" />
       <Grid container spacing={3} style={{ marginTop: 20, marginBottom: 20 }}>
         <Grid item xs="12" sm="4" className="work" component="a" href="#">
           <div>
