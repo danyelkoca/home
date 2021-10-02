@@ -45,11 +45,17 @@ const Info = ({ language }) => {
       >
         <Typography
           variant="h4"
-          style={{ fontFamily: "'Roboto Slab', serif", fontWeight: "300" }}
+          style={{
+            fontFamily:
+              language === "en"
+                ? "'Roboto Slab', serif"
+                : "'Sawarabi Mincho', sans-serif",
+            fontWeight: "300",
+          }}
         >
           {language === "en"
-            ? "Hi! I'm Danyel, consultant / web developer / data scientist based in Tokyo."
-            : "こんにちは！\n 京大出身・東京在住のコンサルタントです"}
+            ? "Hi! I'm Danyel, consultant / web developer / data scientist based in Tokyo"
+            : "こんにちは！\n\n東京在住のコンサルタント・データサイエンティストです"}
         </Typography>
       </Grid>
     </Grid>

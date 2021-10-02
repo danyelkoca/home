@@ -5,9 +5,9 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
-import { Typography } from "@material-ui/core";
+import { Link, Typography } from "@material-ui/core";
 import SectionTitle from "./sectionTitle";
-import profile from "../../images/profile.JPG";
+import profile from "../../images/profile.jpg";
 import Item from "./about/item";
 import slovenia from "../../images/about/slovenia.jpg";
 import toefl from "../../images/about/toefl.jpg";
@@ -24,29 +24,93 @@ import graduation from "../../images/about/graduation.jpg";
 import zs from "../../images/about/zs.jpg";
 import aimer from "../../images/about/aimer.jpg";
 import od from "../../images/about/od.jpg";
+import { React } from "react";
 
 let abouts = [
   {
     img: od,
     text: {
-      en: "Published: Origin-destination matrix estimation by deep learning using maps with New York case study",
-      jp: "地図データとディープラーニングを用いたOD交通量推定・NY実証実験：IEEE工学学問雑誌での発行",
+      en: (
+        <div>
+          <Typography>Published:</Typography>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://ieeexplore.ieee.org/document/9529275"
+          >
+            Origin-destination matrix estimation by deep learning using maps
+            with New York case study
+          </Link>
+        </div>
+      ),
+      jp: (
+        <div>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://ieeexplore.ieee.org/document/9529275"
+          >
+            地図データとディープラーニングを用いたOD交通量推定・NY実証実験
+          </Link>
+          <Typography>IEEE工学学問雑誌での発行</Typography>
+        </div>
+      ),
     },
     date: "2021 Sep",
   },
   {
     img: aimer,
     text: {
-      en: "Launched: Aimer - Japan Healthcare Intelligence App",
-      jp: "Aimer: 日本医療アプリを発足",
+      en: (
+        <div>
+          <Typography>Launched:</Typography>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://aimer-health-app.herokuapp.com/"
+          >
+            Aimer - Japan Healthcare Intelligence App
+          </Link>
+        </div>
+      ),
+      jp: (
+        <div>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://aimer-health-app.herokuapp.com/"
+          >
+            Aimer
+          </Link>
+          <Typography>日本医療アプリを発足</Typography>
+        </div>
+      ),
     },
     date: "2021 Aug",
   },
   {
     img: zs,
     text: {
-      en: "Decision Analytics Associate @ ZS Tokyo Office",
-      jp: "ZSアソシエイツ東京オフィスにに入社",
+      en: (
+        <div>
+          <Typography>Decision Analytics Associate @</Typography>
+          <Link target="_blank" rel="noopener" href="https://www.zs.com/">
+            ZS Tokyo Office
+          </Link>
+        </div>
+      ),
+      jp: (
+        <div>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://www.zs.com/jp/japan"
+          >
+            ZSアソシエイツ東京オフィス
+          </Link>
+          <Typography>入社</Typography>
+        </div>
+      ),
     },
     date: "2020 Mar",
   },
@@ -77,8 +141,30 @@ let abouts = [
   {
     img: its,
     text: {
-      en: "Researcher at Intelligent Transport Systems Laboratory @ Kyoto University",
-      jp: "京都大学・交通情報工学研究室に入室",
+      en: (
+        <div>
+          <Typography>Researcher @</Typography>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://trans.kuciv.kyoto-u.ac.jp/its/english/index.html"
+          >
+            Intelligent Transport Systems Laboratory
+          </Link>
+        </div>
+      ),
+      jp: (
+        <div>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://trans.kuciv.kyoto-u.ac.jp/its/index.html"
+          >
+            京都大学・交通情報工学研究室
+          </Link>
+          <Typography>入室</Typography>
+        </div>
+      ),
     },
     date: "2019 Apr",
   },
@@ -150,9 +236,10 @@ const About = ({ language }) => {
         title={{ en: "About", jp: "私について" }}
       />
       <div
+        id="blogScroll"
         style={{
           maxHeight: 500,
-          overflow: "scroll",
+          overflow: "auto",
           marginTop: 20,
           marginBottom: 20,
         }}
