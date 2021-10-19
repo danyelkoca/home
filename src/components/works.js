@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Link, Typography } from "@material-ui/core";
 import health from "../images/health.jpg";
 import data from "../images/data.jpg";
 import web from "../images/web.jpg";
@@ -7,9 +7,9 @@ import healthDark from "../images/healthDark.jpg";
 import dataDark from "../images/dataDark.jpg";
 import webDark from "../images/webDark.jpg";
 import SectionTitle from "./sectionTitle";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeWork } from "../redux/work";
+import { changeVisible } from "../redux/visible";
 
 const useStyles = makeStyles((theme) => ({
   profile: {
@@ -55,9 +55,12 @@ const Works = () => {
           return (
             <Grid item xs="12" sm="4" className="work work-main">
               <Link
+                href="#"
                 className="workLink"
-                to="/works"
-                onClick={() => dispatch(changeWork(w))}
+                onClick={() => {
+                  dispatch(changeWork(w));
+                  dispatch(changeVisible("works"));
+                }}
               >
                 <img
                   style={{

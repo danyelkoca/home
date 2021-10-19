@@ -9,13 +9,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 import TranslateIcon from "@mui/icons-material/Translate";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../redux/theme";
 import { changeLang } from "../redux/lang";
+import { changeVisible } from "../redux/visible";
+import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -75,7 +75,10 @@ const Navbar = () => {
       <Toolbar className={classes.toolbar}>
         <Link
           className={classes.title}
-          to="/home"
+          onClick={() => {
+            dispatch(changeVisible("home"));
+          }}
+          href="#"
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Typography variant="h6">
@@ -149,40 +152,52 @@ const Navbar = () => {
             onClose={handleMainClose}
           >
             <MenuItem onClick={handleMainClose}>
-              <HashLink
+              <Link
                 className={classes.title}
-                to="/home#my-works"
+                onClick={() => {
+                  dispatch(changeVisible("home"));
+                }}
+                href="#my-works"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "My Works" : "プロジェクトの事例"}
-              </HashLink>
+              </Link>
             </MenuItem>
             <MenuItem onClick={handleMainClose}>
-              <HashLink
+              <Link
                 className={classes.title}
-                to="/home#blog"
+                onClick={() => {
+                  dispatch(changeVisible("home"));
+                }}
+                href="#blog"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "Blog" : "ブログ"}
-              </HashLink>
+              </Link>
             </MenuItem>
             <MenuItem onClick={handleMainClose}>
-              <HashLink
+              <Link
                 className={classes.title}
-                to="/home#about"
+                onClick={() => {
+                  dispatch(changeVisible("home"));
+                }}
+                href="#about"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "About" : "学・経歴"}
-              </HashLink>
+              </Link>
             </MenuItem>
             <MenuItem onClick={handleMainClose}>
-              <HashLink
+              <Link
                 className={classes.title}
-                to="/home#contact"
+                onClick={() => {
+                  dispatch(changeVisible("home"));
+                }}
+                href="#contact"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "Contact" : "コンタクト"}
-              </HashLink>
+              </Link>
             </MenuItem>
           </Menu>
         </div>
