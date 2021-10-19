@@ -75,7 +75,7 @@ const Navbar = () => {
       <Toolbar className={classes.toolbar}>
         <Link
           className={classes.title}
-          to="/"
+          to="/home"
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Typography variant="h6">
@@ -151,7 +151,7 @@ const Navbar = () => {
             <MenuItem onClick={handleMainClose}>
               <HashLink
                 className={classes.title}
-                to="/#my-works"
+                to="#my-works"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "My Works" : "プロジェクトの事例"}
@@ -160,7 +160,7 @@ const Navbar = () => {
             <MenuItem onClick={handleMainClose}>
               <HashLink
                 className={classes.title}
-                to="/#blog"
+                to="#blog"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "Blog" : "ブログ"}
@@ -169,7 +169,7 @@ const Navbar = () => {
             <MenuItem onClick={handleMainClose}>
               <HashLink
                 className={classes.title}
-                to="/#about"
+                to="#about"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "About" : "学・経歴"}
@@ -178,7 +178,7 @@ const Navbar = () => {
             <MenuItem onClick={handleMainClose}>
               <HashLink
                 className={classes.title}
-                to="/#contact"
+                to="#contact"
                 style={{ textDecoration: "none" }}
               >
                 {lang === "en" ? "Contact" : "コンタクト"}

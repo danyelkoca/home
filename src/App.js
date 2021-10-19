@@ -55,7 +55,7 @@ function App() {
                   </CSSTransition>
                 )}
               </Route>
-              <Route exact path="/">
+              <Route exact path="/home">
                 {({ match }) => (
                   <CSSTransition
                     in={match != null}
