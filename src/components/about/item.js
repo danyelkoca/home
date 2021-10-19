@@ -5,6 +5,7 @@ import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import { Grid, Typography } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -29,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Item = ({ img, text, date, index }) => {
+  const nightTheme = useSelector((state) => state.theme.value);
+
   const classes = useStyles();
 
   return (
@@ -58,7 +61,9 @@ const Item = ({ img, text, date, index }) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-        <Typography color="textSecondary">{date}</Typography>
+        <Typography color={nightTheme ? "white" : "textSecondary"}>
+          {date}
+        </Typography>
 
         <Typography>{text}</Typography>
       </TimelineContent>

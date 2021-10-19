@@ -1,14 +1,12 @@
 import { createTheme } from "@material-ui/core";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { useEffect, useState } from "react";
-import Navbar from "./components/navbar/main";
-import "@fontsource/roboto";
-import Info from "./components/display/info";
-import Works from "./components/display/works";
-import Blog from "./components/display/blog";
-import About from "./components/display/about";
-import Contact from "./components/display/contact";
-import Disclaimer from "./components/display/disclaimer";
+import Navbar from "./components/navbar";
+import MainDisplay from "./components/mainDisplay";
+import WorksDisplay from "./components/worksDisplay";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+import { useSelector } from "react-redux";
 
 const theme = createTheme({
   palette: {
@@ -19,32 +17,63 @@ const theme = createTheme({
 });
 
 function App() {
-  const [language, setLanguage] = useState("en");
+  const nightTheme = useSelector((state) => state.theme.value);
 
-  function handleLanguageChange(lang) {
-    setLanguage(lang);
-  }
   return (
-    <ThemeProvider theme={theme} className="noScroll">
-      <div
-        className="noScroll"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexGrow: 1,
-        }}
-      >
-        <div style={{ maxWidth: 1000, flexGrow: 1 }} className="noScroll">
-          <Navbar language={language} onLanguageChange={handleLanguageChange} />
-          <Info language={language} className="noScroll" />
-          <Works language={language} />
-          <Blog language={language} />
-          <About language={language} />
-          <Contact language={language} />
-          <Disclaimer language={language} />
+    <Router>
+      <ThemeProvider theme={theme} className="noScroll">
+        <div
+          className="noScroll"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexGrow: 1,
+            backgroundColor: nightTheme ? "#121212" : "white",
+            color: nightTheme ? "white" : "#121212",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1000,
+              width: "100%",
+              fexGrow: 1,
+            }}
+          >
+            <Navbar />
+            <div style={{ minHeight: "100vh", position: "relative" }}>
+              <Route path="/works">
+                {({ match }) => (
+                  <CSSTransition
+                    in={match != null}
+                    timeout={200}
+                    classNames="page"
+                    unmountOnExit
+                  >
+                    <div className="page">
+                      <WorksDisplay />
+                    </div>
+                  </CSSTransition>
+                )}
+              </Route>
+              <Route exact path="/">
+                {({ match }) => (
+                  <CSSTransition
+                    in={match != null}
+                    timeout={200}
+                    classNames="page"
+                    unmountOnExit
+                  >
+                    <div className="page">
+                      <MainDisplay />
+                    </div>
+                  </CSSTransition>
+                )}
+              </Route>
+            </div>
+          </div>
         </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 

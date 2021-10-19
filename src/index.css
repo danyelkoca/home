@@ -1,27 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+
+
+* {
+    font-family: 'Noto Sans', sans-serif !important;
 }
 
 .noScroll {
     overflow-x: hidden;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-}
-
-* {
-    font-family: "Roboto";
-}
 
 .section-title {
     position: relative;
@@ -42,23 +35,57 @@ code {
     z-index: 1;
 }
 
-.work {
+.section-title-dark::after {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.work-display {
     position: relative;
     overflow: hidden;
     max-width: 100%;
     width: 100%;
+    display: block;
 }
 
-.work>div {
+.work-display-link {
     position: relative;
     overflow: hidden;
     max-width: 100%;
     width: 100%;
     height: 100%;
     max-height: 100%;
+    display: block;
 }
 
-.work>div::after {
+.work-display-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.work {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+.workLink {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.workLink::after {
     content: "";
     position: absolute;
     top: 0;
@@ -70,11 +97,14 @@ code {
 
 .work p {
     position: absolute;
+    color: black;
+    z-index: 2;
+}
+
+.work-main p {
     bottom: 10px;
     left: 0;
-    color: black;
     font-size: 24px;
-    z-index: 2;
     background: white;
     background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     width: 80%;
@@ -82,6 +112,17 @@ code {
     padding-right: 10px;
     border-radius: 0 3px 3px 0;
 
+}
+
+.work-display p {
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 10px;
 }
 
 .work img {
@@ -99,7 +140,7 @@ code {
         transform: scale(1.5);
     }
 
-    .work>div {
+    .workLink {
         border-radius: 10px;
     }
 
@@ -115,4 +156,45 @@ code {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+.page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%
+}
+
+.page-enter {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-duration: 200ms;
+}
+
+.page-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition-duration: 200ms;
+}
+
+.active-button-day {
+    background-color: black !important;
+    color: white !important;
+    border-color: black !important;
+}
+
+.active-button-night {
+    background-color: white !important;
+    color: #121212 !important;
+    border-color: white !important;
 }

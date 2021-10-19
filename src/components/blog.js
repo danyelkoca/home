@@ -1,12 +1,15 @@
 import { Grid, Typography } from "@material-ui/core";
 import SectionTitle from "./sectionTitle";
+import { useSelector } from "react-redux";
 
-const Blog = ({ language }) => {
+const Blog = () => {
+  const lang = useSelector((state) => state.lang.value);
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }} id="blog">
-      <SectionTitle language={language} title={{ en: "Blog", jp: "ブログ" }} />
+      <SectionTitle title={{ en: "Blog", jp: "ブログ" }} />
       <div style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}>
-        {language === "en"
+        {lang === "en"
           ? "There is nothing to show yet."
           : "まだ投稿がありません"}
       </div>

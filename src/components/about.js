@@ -7,24 +7,25 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import { Link, Typography } from "@material-ui/core";
 import SectionTitle from "./sectionTitle";
-import profile from "../../images/profile.jpg";
+import profile from "../images/profile.jpg";
 import Item from "./about/item";
-import slovenia from "../../images/about/slovenia.jpg";
-import toefl from "../../images/about/toefl.jpg";
-import sat from "../../images/about/sat.jpg";
-import mext from "../../images/about/mext.jpg";
-import kyotouniversity from "../../images/about/kyotouniversity.jpg";
-import roots from "../../images/about/roots.jpg";
-import internship from "../../images/about/internship.jpg";
-import gomigo from "../../images/about/gomigo.jpg";
-import its from "../../images/about/its.jpg";
-import japanese from "../../images/about/japanese.jpg";
-import mynexthouse from "../../images/about/mynexthouse.jpg";
-import graduation from "../../images/about/graduation.jpg";
-import zs from "../../images/about/zs.jpg";
-import aimer from "../../images/about/aimer.jpg";
-import od from "../../images/about/od.jpg";
+import slovenia from "../images/about/slovenia.jpg";
+import toefl from "../images/about/toefl.jpg";
+import sat from "../images/about/sat.jpg";
+import mext from "../images/about/mext.jpg";
+import kyotouniversity from "../images/about/kyotouniversity.jpg";
+import roots from "../images/about/roots.jpg";
+import internship from "../images/about/internship.jpg";
+import gomigo from "../images/about/gomigo.jpg";
+import its from "../images/about/its.jpg";
+import japanese from "../images/about/japanese.jpg";
+import mynexthouse from "../images/about/mynexthouse.jpg";
+import graduation from "../images/about/graduation.jpg";
+import zs from "../images/about/zs.jpg";
+import aimer from "../images/about/aimer.jpg";
+import od from "../images/about/od.jpg";
 import { React } from "react";
+import { useSelector } from "react-redux";
 
 let abouts = [
   {
@@ -228,13 +229,12 @@ let abouts = [
   },
 ];
 
-const About = ({ language }) => {
+const About = () => {
+  const lang = useSelector((state) => state.lang.value);
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }} id="about">
-      <SectionTitle
-        language={language}
-        title={{ en: "About", jp: "私について" }}
-      />
+      <SectionTitle lang={lang} title={{ en: "About", jp: "私について" }} />
       <div
         id="blogScroll"
         style={{
@@ -248,7 +248,7 @@ const About = ({ language }) => {
           {abouts.map((a, index) => (
             <Item
               img={a.img}
-              text={a.text[language]}
+              text={a.text[lang]}
               date={a.date}
               index={index + 1}
             />

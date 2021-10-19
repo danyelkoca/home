@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@material-ui/core";
-import profile from "../../images/profile.jpg";
+import profile from "../images/profile.jpg";
 import { makeStyles } from "@material-ui/core/styles";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   profile: {
@@ -12,7 +13,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Info = ({ language }) => {
+const Info = () => {
+  const lang = useSelector((state) => state.lang.value);
+
   const classes = useStyles();
 
   return (
@@ -43,19 +46,10 @@ const Info = ({ language }) => {
           alignItems: "center",
         }}
       >
-        <Typography
-          variant="h4"
-          style={{
-            fontFamily:
-              language === "en"
-                ? "'Roboto Slab', serif"
-                : "'Sawarabi Mincho', sans-serif",
-            fontWeight: "300",
-          }}
-        >
-          {language === "en"
-            ? "Hi! I'm Danyel, consultant / web developer / data scientist based in Tokyo"
-            : "こんにちは！\n\n東京在住のコンサルタント・データサイエンティストです"}
+        <Typography variant="h3" style={{ width: "100%" }}>
+          {lang === "en"
+            ? "Hi! I'm Danyel, an entrepreneur based in Tokyo"
+            : "こんにちは！東京在住の事業家です"}
         </Typography>
       </Grid>
     </Grid>
