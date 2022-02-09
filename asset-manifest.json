@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/home/static/css/main.3afdbfb8.chunk.css",
-    "main.js": "/home/static/js/main.7f63e367.chunk.js",
-    "main.js.map": "/home/static/js/main.7f63e367.chunk.js.map",
+    "main.js": "/home/static/js/main.4929ee10.chunk.js",
+    "main.js.map": "/home/static/js/main.4929ee10.chunk.js.map",
     "runtime-main.js": "/home/static/js/runtime-main.4246b696.js",
     "runtime-main.js.map": "/home/static/js/runtime-main.4246b696.js.map",
     "static/js/2.476c60d5.chunk.js": "/home/static/js/2.476c60d5.chunk.js",
@@ -29,6 +29,7 @@
     "static/media/od.72783e15.jpg": "/home/static/media/od.72783e15.jpg",
     "static/media/profile.7fb63dd3.png": "/home/static/media/profile.7fb63dd3.png",
     "static/media/promotion.c3cf21a7.jpg": "/home/static/media/promotion.c3cf21a7.jpg",
+    "static/media/real_estate.2df94e54.jpg": "/home/static/media/real_estate.2df94e54.jpg",
     "static/media/roots.a30e81f0.jpg": "/home/static/media/roots.a30e81f0.jpg",
     "static/media/sat.12750553.jpg": "/home/static/media/sat.12750553.jpg",
     "static/media/slovenia.44543dc7.jpg": "/home/static/media/slovenia.44543dc7.jpg",
@@ -40,6 +41,6 @@
     "static/js/runtime-main.4246b696.js",
     "static/js/2.476c60d5.chunk.js",
     "static/css/main.3afdbfb8.chunk.css",
-    "static/js/main.7f63e367.chunk.js"
+    "static/js/main.4929ee10.chunk.js"
   ]
 }
