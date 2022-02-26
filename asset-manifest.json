@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.20bfdbef.chunk.css",
-    "main.js": "/home/static/js/main.dd80c2ea.chunk.js",
-    "main.js.map": "/home/static/js/main.dd80c2ea.chunk.js.map",
+    "main.css": "/home/static/css/main.158b657c.chunk.css",
+    "main.js": "/home/static/js/main.aa478caf.chunk.js",
+    "main.js.map": "/home/static/js/main.aa478caf.chunk.js.map",
     "runtime-main.js": "/home/static/js/runtime-main.4246b696.js",
     "runtime-main.js.map": "/home/static/js/runtime-main.4246b696.js.map",
     "static/js/2.23bcc789.chunk.js": "/home/static/js/2.23bcc789.chunk.js",
     "static/js/2.23bcc789.chunk.js.map": "/home/static/js/2.23bcc789.chunk.js.map",
     "index.html": "/home/index.html",
-    "static/css/main.20bfdbef.chunk.css.map": "/home/static/css/main.20bfdbef.chunk.css.map",
+    "static/css/main.158b657c.chunk.css.map": "/home/static/css/main.158b657c.chunk.css.map",
     "static/js/2.23bcc789.chunk.js.LICENSE.txt": "/home/static/js/2.23bcc789.chunk.js.LICENSE.txt",
     "static/media/aimer.09d4e2f3.jpg": "/home/static/media/aimer.09d4e2f3.jpg",
     "static/media/aimer.b373d75e.jpg": "/home/static/media/aimer.b373d75e.jpg",
@@ -40,7 +40,7 @@
   "entrypoints": [
     "static/js/runtime-main.4246b696.js",
     "static/js/2.23bcc789.chunk.js",
-    "static/css/main.20bfdbef.chunk.css",
-    "static/js/main.dd80c2ea.chunk.js"
+    "static/css/main.158b657c.chunk.css",
+    "static/js/main.aa478caf.chunk.js"
   ]
 }
